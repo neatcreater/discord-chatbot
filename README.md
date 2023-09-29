@@ -36,7 +36,7 @@ This project is available as one of the default frameworks at [jarvislabs.ai](ht
 
 2. Install dependencies. 
     ```console
-    $ cd LLM-As-Chatbot
+    $ cd discord-chatbot
     $ pip install -r requirements.txt
     ```
 
@@ -71,7 +71,7 @@ This project is available as one of the default frameworks at [jarvislabs.ai](ht
 
 2. Install dependencies. 
     ```console
-    $ cd LLM-As-Chatbot
+    $ cd discord-chatbot
     $ pip install -r requirements.txt
     ```
 
@@ -79,7 +79,7 @@ This project is available as one of the default frameworks at [jarvislabs.ai](ht
 
     The `--token` is a required parameter, and you can get it from [Discord Developer Portal](https://discord.com/developers/docs/intro). If you have not setup Discord Bot from the Discord Developer Portal yet, please follow [How to Create a Discord Bot Account](https://www.freecodecamp.org/news/create-a-discord-bot-with-python/) section of the tutorial from [freeCodeCamp](https://www.freecodecamp.org/) to get the token.
 
-    The `--model-name` is a required parameter, and you can look around the list of supported models from [`model_cards.json`](https://github.com/neatcreater/LLM-As-Chatbot/blob/main/model_cards.json).
+    The `--model-name` is a required parameter, and you can look around the list of supported models from [`model_cards.json`](https://github.com/neatcreater/discord-chatbot/blob/main/model_cards.json).
 
     `--max-workers` is a parameter to determine how many requests to be handled concurrently. This simply defines the value of the `ThreadPoolExecutor`.
 
@@ -103,6 +103,6 @@ This project is available as one of the default frameworks at [jarvislabs.ai](ht
     There is no slash commands. The only way to interact with the deployed discord bot is to mention the bot. However, you can pass some special strings while mentioning the bot.
 
     - **`@bot_name help`**: it will display a simple help message
-    - **`@bot_name model-info`**: it will display the information of the currently selected(deployed) model from the [`model_cards.json`](https://github.com/neatcreater/LLM-As-Chatbot/blob/main/model_cards.json).
+    - **`@bot_name model-info`**: it will display the information of the currently selected(deployed) model from the [`model_cards.json`](https://github.com/neatcreater/discord-chatbot/blob/main/model_cards.json).
     - **`@bot_name default-params`**: it will display the default parameters to be used in model's `generate` method. That is `GenerationConfig`, and it holds parameters such as `temperature`, `top_p`, and so on.
     - **`@bot_name user message --max-new-tokens 512 --temperature 0.9 --top-p 0.75 --do_sample --max-windows 5 --internet`**: all parameters are used to dynamically determine the text geneartion behaviour as in `GenerationConfig` except `max-windows`. The `max-windows` determines how many past conversations to look up as a reference. The default value is set to `3`, but as the conversation goes long, you can increase this value. `--internet` will try to answer to your prompt by aggregating information scraped from google search. To use `--internet` option, you need to specify `--serper-api-key` when booting up the program.
